@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publications | Hridya Dhulipala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Hridya Dhulipala</a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">About</a></li>
+      <li><a href="publications.html" class="nav-link active">Publications</a></li>
+      <li><a href="experience.html" class="nav-link">Experience</a></li>
+      <li><a href="education.html" class="nav-link">Education</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+    </ul>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="header-content">
+    <div class="profile-section">
+      <h1>Publications</h1>
+      <p class="subtitle">Research Contributions & Papers</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2><i class="fas fa-book"></i> Publications</h2>
+  <div class="papers">
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3>CRISPE: Semantic-Guided Execution Planning for Code Coverage Prediction</h3>
+        <span class="paper-badge accepted">FSE 2025</span>
+      </div>
+    </div>
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3>Planning LLMs for Static Detection of Runtime Errors</h3>
+        <span class="paper-badge accepted">ICSE 2025</span>
+      </div>
+    </div>
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3>Planning to Guide LLM for Code Coverage Prediction</h3>
+        <span class="paper-badge accepted">ICSE (FORGE) 2024</span>
+      </div>
+    </div>
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3>Program-for-Thought: Adaptive Planning for Web Test Script Generation</h3>
+        <span class="paper-badge review">Under Review (FSE 2026)</span>
+      </div>
+    </div>
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3>CERBERUS: Coverage-Guided Execution-Free Fuzz Testing for Code Snippets</h3>
+        <span class="paper-badge">Work in Progress</span>
+      </div>
+    </div>
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3>Sign Language Recognition for Mine Workers</h3>
+        <span class="paper-badge accepted">IEEE CONECCT 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Hridya Dhulipala. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hridya.dhulipala@utdallas.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
+

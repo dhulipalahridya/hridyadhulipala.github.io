@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experience | Hridya Dhulipala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Hridya Dhulipala</a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">About</a></li>
+      <li><a href="publications.html" class="nav-link">Publications</a></li>
+      <li><a href="experience.html" class="nav-link active">Experience</a></li>
+      <li><a href="education.html" class="nav-link">Education</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+    </ul>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="header-content">
+    <div class="profile-section">
+      <h1>Work Experience</h1>
+      <p class="subtitle">Professional Journey & Teaching</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <h3>AI Researcher</h3>
+        <p class="company">DMI (with UTD)</p>
+      </div>
+      <span class="date-badge">June 2024 – Present</span>
+    </div>
+    <ul class="card-list">
+      <li><i class="fas fa-check-circle"></i> Co-invented an Enhanced Retrieval-Augmented Generation framework (Patent Pending)</li>
+      <li><i class="fas fa-check-circle"></i> Built NLP-based compliance automation reducing review time by 80%</li>
+      <li><i class="fas fa-check-circle"></i> Developed AI-assisted Angular code migration pipelines</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <h3>Business Technology Analyst</h3>
+        <p class="company">Deloitte</p>
+      </div>
+      <span class="date-badge">Sep 2021 – Jul 2022</span>
+    </div>
+    <ul class="card-list">
+      <li><i class="fas fa-check-circle"></i> Built enterprise microsites using Angular, Java, HTML, CSS</li>
+      <li><i class="fas fa-check-circle"></i> Developed scalable backend systems in Java</li>
+      <li><i class="fas fa-check-circle"></i> Strengthened quality assurance with JUnit testing</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <h3>Software & Intelligence Intern</h3>
+        <p class="company">Ather Energy</p>
+      </div>
+      <span class="date-badge">Feb 2021 – Aug 2021</span>
+    </div>
+    <ul class="card-list">
+      <li><i class="fas fa-check-circle"></i> Designed full-stack web applications using Node.js</li>
+      <li><i class="fas fa-check-circle"></i> Built responsive, performance-optimized UI components</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fas fa-chalkboard-teacher"></i> Teaching</h2>
+  <div class="content-box">
+    <h3>Teaching Assistant</h3>
+    <p class="institution">Department of Computer Science, University of Texas at Dallas</p>
+    <p class="date">Fall 2022 – Spring 2025</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Hridya Dhulipala. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hridya.dhulipala@utdallas.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
+
