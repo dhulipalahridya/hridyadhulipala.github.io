@@ -32,6 +32,30 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Page Transition Animations */
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Layout Container */
@@ -39,6 +63,15 @@ body {
   display: flex;
   min-height: 100vh;
   position: relative;
+}
+
+/* Main Content Animation */
+.main-content {
+  animation: slideInRight 0.4s ease-out;
+}
+
+.main-content.transitioning-out {
+  animation: slideOutLeft 0.4s ease-in;
 }
 
 /* Top Navigation Buttons Container */
