@@ -207,13 +207,16 @@
     if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
       e.preventDefault();
       
+      // Prevent body scroll during transition
+      document.body.classList.add('transitioning');
+      
       // Add transition class to main content
       mainContent.classList.add('transitioning-out');
       
       // Navigate after animation
       setTimeout(() => {
         window.location.href = href;
-      }, 400);
+      }, 500);
     }
   }
 
