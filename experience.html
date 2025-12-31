@@ -12,6 +12,9 @@
 <body>
 
 <div class="layout-container">
+  <div class="menu-toggle" aria-label="Toggle Menu">
+    <i class="fas fa-bars"></i>
+  </div>
   <nav class="sidebar">
     <a href="index.html" class="sidebar-logo">Hridya Dhulipala</a>
     <ul class="sidebar-menu">
@@ -118,6 +121,36 @@
       link.classList.add('active');
     } else {
       link.classList.remove('active');
+    }
+  });
+
+  // Handle sidebar hover behavior
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  let sidebarTimeout;
+
+  function showSidebar() {
+    clearTimeout(sidebarTimeout);
+    sidebar.style.transform = 'translateX(0)';
+    mainContent.style.marginLeft = '280px';
+  }
+
+  function hideSidebar() {
+    sidebarTimeout = setTimeout(() => {
+      sidebar.style.transform = 'translateX(-100%)';
+      mainContent.style.marginLeft = '0';
+    }, 300);
+  }
+
+  menuToggle.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseleave', hideSidebar);
+  menuToggle.addEventListener('mouseleave', () => {
+    // Only hide if not hovering over sidebar
+    if (!sidebar.matches(':hover')) {
+      hideSidebar();
     }
   });
 </script>
