@@ -407,32 +407,6 @@ section h2 i {
   text-decoration: none;
 }
 
-/* Project Link Button */
-.project-link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.project-link-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-md);
-  color: white;
-  text-decoration: none;
-}
-
-.project-link-btn i {
-  font-size: 0.85rem;
-}
 
 /* Contact Page */
 .contact-info {
