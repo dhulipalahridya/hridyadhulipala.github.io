@@ -160,6 +160,30 @@
       hideSidebar();
     }
   });
+
+  // Page transition on navigation
+  function handlePageTransition(e) {
+    const link = e.currentTarget;
+    const href = link.getAttribute('href');
+    
+    // Only handle internal navigation (not external links or anchors)
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+      e.preventDefault();
+      
+      // Add transition class to main content
+      mainContent.classList.add('transitioning-out');
+      
+      // Navigate after animation
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    }
+  }
+
+  // Add transition to all navigation links
+  document.querySelectorAll('.sidebar-link, .nav-icon-btn').forEach(link => {
+    link.addEventListener('click', handlePageTransition);
+  });
 </script>
 
 </body>
