@@ -61,10 +61,10 @@ body {
 /* Prevent layout shifts during transition */
 body.transitioning {
   overflow: hidden;
+  position: relative;
 }
 
 body.transitioning .layout-container {
-  opacity: 0;
   pointer-events: none;
 }
 
@@ -82,9 +82,23 @@ body.transitioning .layout-container {
 }
 
 /* Only apply slide-in animation if coming from a transition */
+body.page-loading {
+  background: #f9fafb;
+  background-color: #f9fafb;
+  overflow: hidden;
+}
+
 body.page-loading .main-content {
   transform: translateX(100%);
   opacity: 0;
+}
+
+body.page-loading .main-content.animate-in {
+  animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Also allow animation without page-loading if animate-in is added */
+.main-content.animate-in {
   animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -94,20 +108,10 @@ body.page-loading .main-content {
   pointer-events: none;
 }
 
-/* Hide body completely after slide-out to prevent flash */
-body.transitioning-out {
-  overflow: hidden;
-}
-
-body.transitioning-out .layout-container {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Ensure new page starts visible and animates in */
-body.page-loading {
-  overflow: hidden;
-  background-color: var(--bg-color);
+/* Ensure smooth transition - old page stays visible until new page is ready */
+body.transitioning .layout-container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Top Navigation Buttons Container */

@@ -15,6 +15,9 @@
   (function() {
     if (sessionStorage.getItem('isTransitioning') === 'true') {
       document.body.classList.add('page-loading');
+      // Set background immediately to prevent white flash
+      document.body.style.background = '#f9fafb';
+      document.body.style.backgroundColor = '#f9fafb';
     }
   })();
 </script>
@@ -61,7 +64,7 @@
     <div class="profile-section">
       <h1>Hridya Dhulipala</h1>
       <p class="subtitle">Ph.D. Candidate, Computer Science</p>
-      <p class="focus">AI-driven Software Engineering & Testing</p>
+      <p class="focus">AI-driven Software Engineering, Testing & Automation</p>
     </div>
     <div class="links">
       <a href="mailto:hridya.dhulipala@utdallas.edu" class="link-btn" aria-label="Email">
@@ -218,20 +221,30 @@
     }
   }
 
-  // Check if we're coming from a transition and start with slide-in
+  // Check if we're coming from a transition and start with slide-in immediately
   if (sessionStorage.getItem('isTransitioning') === 'true') {
     sessionStorage.removeItem('isTransitioning');
-    // Ensure DOM is ready, then trigger slide-in animation
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        requestAnimationFrame(() => {
-          document.body.classList.remove('page-loading');
-        });
-      });
-    } else {
-      requestAnimationFrame(() => {
+    const mainContent = document.querySelector('.main-content');
+    // Start animation immediately - no delay
+    if (mainContent) {
+      mainContent.classList.add('animate-in');
+      // Remove page-loading class to allow animation
+      setTimeout(() => {
         document.body.classList.remove('page-loading');
+      }, 10);
+    } else {
+      // If mainContent not ready, wait for it
+      const observer = new MutationObserver(() => {
+        const mc = document.querySelector('.main-content');
+        if (mc) {
+          mc.classList.add('animate-in');
+          setTimeout(() => {
+            document.body.classList.remove('page-loading');
+          }, 10);
+          observer.disconnect();
+        }
       });
+      observer.observe(document.body, { childList: true, subtree: true });
     }
   }
 
